@@ -31,4 +31,45 @@ function getHumanChoice() {
   return humanChoice;
 }
 
-console.log(getHumanChoice());
+function playRound(humanChoice, computerChoice) {
+  if (
+    (humanChoice == "rock" && computerChoice == "rock") ||
+    (humanChoice == "paper" && computerChoice == "paper") ||
+    (humanChoice == "scissors" && computerChoice == "scissors")
+  ) {
+    console.log("No winner. Try again");
+  }
+  if (
+    (humanChoice == "rock" && computerChoice == "scissors") ||
+    (humanChoice == "scissors" && computerChoice == "paper") ||
+    (humanChoice == "paper" && computerChoice == "rock")
+  ) {
+    console.log("Player wins");
+    humanScore += 1;
+  }
+  if (
+    (humanChoice == "rock" && computerChoice == "paper") ||
+    (humanChoice == "scissors" && computerChoice == "rock") ||
+    (humanChoice == "paper" && computerChoice == "scissors")
+  ) {
+    console.log("Computer wins");
+    computerScore += 1;
+  }
+}
+
+function playGame() {
+  while (humanScore < 3 && computerScore < 3) {
+    playRound(getHumanChoice(), getComputerChoice());
+    console.log(
+      "The score is: Player: " + humanScore + " Computer: " + computerScore
+    );
+  }
+  if (humanScore == 3) {
+    console.log("Player wins");
+  }
+  if (computerScore == 3) {
+    console.log("Computer wins");
+  }
+}
+
+playGame();
