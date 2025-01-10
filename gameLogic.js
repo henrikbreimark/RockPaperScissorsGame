@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 //Reurns a random sting of either "rock", "paper" or "scissors"
 function getComputerChoice() {
   let computerChoice = ["scissors", "rock", "paper"];
