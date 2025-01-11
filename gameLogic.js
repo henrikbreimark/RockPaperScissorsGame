@@ -55,8 +55,8 @@ function playRound(humanChoice, computerChoice) {
     gameDisplay.textContent = "Computer wins";
     computerScore += 1;
   }
-  gameResults.textContent =
-    "Player: " + humanScore + "   Computer: " + computerScore;
+  gameResults.textContent = displayScore();
+  checkWinner();
 }
 
 //Plays 5 rounds of rock, paper and scissors
@@ -96,3 +96,25 @@ function getButtonChoice(e) {
 //Display variable
 const gameDisplay = document.querySelector("#gameDisplay");
 const gameResults = document.querySelector("#gameResults");
+
+//Function to check if someone win
+function checkWinner() {
+  if (humanScore == 3) {
+    gameDisplay.textContent = "Player wins the game!";
+    resetGame();
+  }
+  if (computerScore == 3) {
+    gameDisplay.textContent = "Computer wins the game";
+    resetGame();
+  }
+}
+
+function displayScore() {
+  return "Player: " + humanScore + "   Computer: " + computerScore;
+}
+
+function resetGame() {
+  humanScore = 0;
+  computerScore = 0;
+  gameResults.textContent = displayScore();
+}
