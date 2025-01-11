@@ -31,6 +31,8 @@ function getHumanChoice() {
   return humanChoice;
 }
 
+//Checks the result of the players and computers choices.
+//Calls for winning check at the end.
 function playRound(humanChoice, computerChoice) {
   if (
     (humanChoice == "rock" && computerChoice == "rock") ||
@@ -58,23 +60,6 @@ function playRound(humanChoice, computerChoice) {
   gameResults.textContent = displayScore();
   checkWinner();
 }
-
-//Plays 5 rounds of rock, paper and scissors
-/* function playGame() {
-  while (humanScore < 3 && computerScore < 3) {
-    playRound(getHumanChoice(), getComputerChoice());
-    console.log(
-      "The score is: Player: " + humanScore + " Computer: " + computerScore
-    );
-  }
-  if (humanScore == 3) {
-    console.log("Player wins");
-  }
-  if (computerScore == 3) {
-    console.log("Computer wins");
-  }
-}
- */
 
 //Fetches buttons from html.
 const gameButtons = document.querySelectorAll(".gameButton");
@@ -109,10 +94,12 @@ function checkWinner() {
   }
 }
 
+//Funtion that returns the current score as a string.
 function displayScore() {
   return "Player: " + humanScore + "   Computer: " + computerScore;
 }
 
+//Resets the score count and score displayed.
 function resetGame() {
   humanScore = 0;
   computerScore = 0;
