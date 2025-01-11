@@ -37,14 +37,14 @@ function playRound(humanChoice, computerChoice) {
     (humanChoice == "paper" && computerChoice == "paper") ||
     (humanChoice == "scissors" && computerChoice == "scissors")
   ) {
-    console.log("No winner. Try again");
+    gameDisplay.textContent = "No winner. Try again";
   }
   if (
     (humanChoice == "rock" && computerChoice == "scissors") ||
     (humanChoice == "scissors" && computerChoice == "paper") ||
     (humanChoice == "paper" && computerChoice == "rock")
   ) {
-    console.log("Player wins");
+    gameDisplay.textContent = "Player wins";
     humanScore += 1;
   }
   if (
@@ -52,7 +52,7 @@ function playRound(humanChoice, computerChoice) {
     (humanChoice == "scissors" && computerChoice == "rock") ||
     (humanChoice == "paper" && computerChoice == "scissors")
   ) {
-    console.log("Computer wins");
+    gameDisplay.textContent = "Computer wins";
     computerScore += 1;
   }
 }
