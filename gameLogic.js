@@ -57,7 +57,8 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-function playGame() {
+//Plays 5 rounds of rock, paper and scissors
+/* function playGame() {
   while (humanScore < 3 && computerScore < 3) {
     playRound(getHumanChoice(), getComputerChoice());
     console.log(
@@ -71,5 +72,11 @@ function playGame() {
     console.log("Computer wins");
   }
 }
+ */
 
-playGame();
+//Fetches buttons from html.
+const gameButtons = document.querySelectorAll(".gameButton");
+//Single variable for each game button
+const rockButton = gameButtons[0];
+const paperButton = gameButtons[1];
+const scissorsButton = gameButtons[2];
