@@ -80,3 +80,16 @@ const gameButtons = document.querySelectorAll(".gameButton");
 const rockButton = gameButtons[0];
 const paperButton = gameButtons[1];
 const scissorsButton = gameButtons[2];
+
+//Event listeners for game buttons
+rockButton.addEventListener("click", getButtonChoice);
+paperButton.addEventListener("click", getButtonChoice);
+scissorsButton.addEventListener("click", getButtonChoice);
+
+//Takes game button choice and plays round.
+function getButtonChoice(e) {
+  playRound(e.target.innerHTML.toLowerCase(), getComputerChoice());
+}
+
+//Display variable
+const gameDisplay = document.querySelector("#gameDisplay");
